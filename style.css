@@ -1,0 +1,145 @@
+* {
+  box-sizing: border-box;
+  font-size: 1.3rem;
+}
+
+body {
+  margin: 0;
+}
+
+.wrapper {
+  display: grid;
+  gap: 1%;
+  /* Used to manipulate the gird boxes */
+  grid-template-areas:
+    "header header header"
+    "h1 h1 h1"
+    "banner banner bb1"
+    "banner banner bb2"
+    "sideMenu main main"
+    "tags main main"
+    "recent main main"
+    "footer footer footer";
+}
+
+/* This is used to select all the elements inside of wrapper */
+.wrapper > * {
+  /* this grid is used to center the headings */
+  display: grid;
+
+  /* Centers the content along the x-axis */
+  justify-content: center;
+  /* Centers the content along the y-azxis */
+  align-items: center;
+  padding: 1rem;
+}
+
+.header {
+  background: blue;
+  /* Naming the grid box to use for changes */
+  grid-area: header;
+}
+
+h1 {
+  background: yellow;
+  grid-area: h1;
+}
+
+.banner {
+  background: red;
+  grid-area: banner;
+}
+
+.bb1 {
+  background: purple;
+  grid-area: bb1;
+}
+
+.bb2 {
+  background: brown;
+  grid-area: bb2;
+}
+
+.side-menu {
+  background: orange;
+  grid-area: sideMenu;
+}
+
+.tags {
+  background: green;
+  grid-area: tags;
+}
+
+.recent {
+  background: radial-gradient(green, yellow);
+  grid-area: recent;
+}
+
+.main {
+  min-height: 50vh;
+  grid-area: main;
+  background: linear-gradient(to left, red, green, blue);
+  display: flex;
+
+  /* space around and space between differences */
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.main div {
+  background: white;
+  min-width: 150px;
+  height: 200px;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 5px;
+  flex-grow: 1;
+}
+
+footer {
+  color: white;
+  background: black;
+  grid-area: footer;
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    grid-template-areas:
+      /* "header header header"
+      "h1 h1 h1"
+      "banner banner banner"
+      "bb2 bb2 bb2"
+      "sideMenu main main"
+      "tags main main"
+      "recent main main"
+      "footer footer footer"; */
+      "header header"
+      "h1 h1"
+      "banner banner"
+      "bb1 bb2"
+      "sideMenu sideMenu"
+      "main main"
+      "tags recent"
+      "footer footer";
+  }
+}
+
+@media (max-width: 550px) {
+  .wrapper {
+    grid-template-areas:
+      "header"
+      "h1"
+      "banner"
+      "bb1"
+      "bb2"
+      "sideMenu"
+      "main"
+      "tags"
+      "recent"
+      "footer";
+  }
+
+  .main > div {
+    width: 100%;
+  }
+}
