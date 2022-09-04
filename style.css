@@ -9,7 +9,7 @@ body {
 
 .wrapper {
   display: grid;
-  gap: 1%;
+  /* gap: 1%; */
   grid-template-columns: repeat(3, 1fr);
   /* Used to manipulate the gird boxes */
   grid-template-areas:
